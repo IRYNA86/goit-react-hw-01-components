@@ -29,7 +29,9 @@ export default function App() {
             isOnline={friends[0].isOnline}
         />
         <TransactionsHistory
-        
+        type={transactions[0].type}
+                    amount={transactions[0].amount}
+                    currency={transactions[0].currency}
         />
     </div>
 }
