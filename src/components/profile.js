@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Profile = (props) => {
   ///Деструктаризация, чтоб не писать props каждый раз. Или можно это сделать вм есто слова props
   const { src, username, tag, location, followers, views, likes } = props
@@ -30,5 +32,15 @@ const Profile = (props) => {
     </ul>
   </div>);
   
+}
+
+Profile.propTypes = {
+  src: PropTypes.string,
+  username: PropTypes.string,
+  tag: PropTypes.string,
+  location: PropTypes.string,
+  followers: PropTypes.number,
+  views: PropTypes.number,
+  likes: PropTypes.number,
 }
 export default Profile

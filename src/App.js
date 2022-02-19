@@ -1,14 +1,18 @@
 import Profile from './components/profile'
 import user from './user.json';
-import Statistics from 'components/statistics';
+// import Statistics from 'components/statistics';
 import data from './data.json';
-import FriendList from './components/friendList';
+import StatisticsList from './components/statisticsList'
+// import Friend from './components/friend';
 import friends from './friends.json';
-import TransactionsHistory from './components/transactionHistory';
+import FriendsList from './components/friendsList';
+// import TransactionsHistory from './components/transactionHistory';
 import transactions from './transactions.json';
+import TransactionHistoryList from './components/transactionHistoryList'
 
 export default function App() {
-    return <div>
+    return <section>
+        <div>
         <Profile
   src={user.avatar}
   username={user.username}
@@ -17,21 +21,25 @@ export default function App() {
   followers={user.stats.followers}
   views={user.stats.views}
   likes={user.stats.likes}  
-        />
-        <Statistics
-    id={data[0].id}
-    label={data[0].label}
-    percentage={data[0].percentage}
-        />
-        <FriendList
-            avatar={friends[0].avatar}
-            name={friends[0].name}
-            isOnline={friends[0].isOnline}
-        />
-        <TransactionsHistory
-        type={transactions[0].type}
-                    amount={transactions[0].amount}
-                    currency={transactions[0].currency}
-        />
-    </div>
+            />
+            </div>
+        <div>
+            <h2 class="title">Upload stats</h2>
+<StatisticsList data={data}/>
+</div>
+        <div>
+            <FriendsList friends={friends} />
+            </div>
+        <table>
+        <thead>
+                <tr>
+                    <th>Type </th>
+                    <th>Amount </th>
+                    <th>Currency</th>
+                </tr>
+        </thead>
+        
+<TransactionHistoryList transactions={transactions}/>
+       </table>
+</section>
 }

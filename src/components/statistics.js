@@ -1,15 +1,18 @@
+import PropTypes from 'prop-types';
+
 export default function Statistics(props) {
-    const {label, percentage} = props
+  const { label, percentage } = props
+ 
   return (
     <section class="statistics">
-      <h2 class="title">Upload stats</h2>
+      {/* <h2 class="title">Upload stats</h2> */}
 
       <ul class="stat-list">
         <li class="item">
           <span class="label">{label}</span>
           <span class="percentage">{percentage}%</span>
         </li>
-        <li class="item">
+        {/* <li class="item">
           <span class="label">{label}</span>
           <span class="percentage">{percentage}%</span>
         </li>
@@ -20,7 +23,13 @@ export default function Statistics(props) {
         <li class="item">
           <span class="label">{label}</span>
           <span class="percentage">{percentage}%</span>
-        </li>
-      </ul>
+        </li> */}
+        </ul>
+      
     </section>);
 }
+Statistics.propTypes = {
+  label: PropTypes.string,
+  percentage: PropTypes.number,
+  
+  }
