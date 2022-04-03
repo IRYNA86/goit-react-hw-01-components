@@ -1,0 +1,28 @@
+.statistics {
+  margin-top: 15px;
+}
+.title {
+  text-align: center;
+  text-transform: uppercase;
+}
+.stat {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 25px;
+}
+.item {
+  border: 2px solid rgb(255, 0, 238);
+}
+.label,
+.percentage {
+  display: block;
+  margin: 15px;
+}
+.label {
+  font-size: 12px;
+}
+.percentage {
+  font-size: 17px;
+  font-weight: bold;
+}

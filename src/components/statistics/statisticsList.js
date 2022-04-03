@@ -1,18 +1,19 @@
-import Statistics from './statistics';
+import Statistics from 'components/statistics/statistics';
+import css from 'components/statistics/statistics.module.css'
 
 function StatisticsList({ data }) {
     return (
-    <ul>
+    <div className={css.stat}>
         {data.map(dat => (
-                <li  key={dat.id}>
+                <div className={css.item} key={dat.id}>
                     <Statistics
                
                 label={dat.label}
                 percentage={dat.percentage}
                     />
-                </li>
+                </div>
             ))}
-    </ul>);
+    </div>);
 }
 
 export default StatisticsList;

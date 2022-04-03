@@ -1,8 +1,10 @@
-import Profile from './components/profile'
+import ProfileList from './components/profile/profileList';
 import user from './user.json';
-// import Statistics from 'components/statistics';
+
 import data from './data.json';
-import StatisticsList from './components/statisticsList'
+import StatisticsList from './components/statistics/statisticsList';
+import StatisticsTitle from 'components/statistics/statisticsTitle';
+import css from 'components/statistics/statistics.module.css'
 // import Friend from './components/friend';
 import friends from './friends.json';
 import FriendsList from './components/friendsList';
@@ -13,20 +15,13 @@ import TransactionHistoryList from './components/transactionHistoryList'
 export default function App() {
     return <section>
         <div>
-        <Profile
-  src={user.avatar}
-  username={user.username}
-  tag={user.tag}
-  location={user.location}
-  followers={user.stats.followers}
-  views={user.stats.views}
-  likes={user.stats.likes}  
-            />
-            </div>
-        <div>
-            <h2 class="title">Upload stats</h2>
-<StatisticsList data={data}/>
-</div>
+            <ProfileList user={user}/>
+        </div>
+        
+        <section className={css.statistics}>
+            <StatisticsTitle text='Upload stats' />
+            <StatisticsList data={data} />
+        </section>
         <div>
             <FriendsList friends={friends} />
             </div>
