@@ -47,8 +47,6 @@ ul {
 .stats_label {
   display: block;
   margin: 10px;
-  border: 1 px;
-  border-color: indigo;
 }
 .label,
 .quantity {

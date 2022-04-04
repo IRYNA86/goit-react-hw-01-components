@@ -1,10 +1,11 @@
-import Friend from './friend';
+import Friend from 'components/friends/friend';
+import css from 'components/friends/friends.module.css'
 
 function FriendsList({ friends }) {
     return (
-  <ul>
+  <ul className={css.friends_center}>
    {friends.map(friend => (
-   <div  key={friend.id}>
+   <div className={css.friends_card} key={friend.id}>
    <Friend
     avatar={friend.avatar}
     name={friend.name}

@@ -1,0 +1,12 @@
+.transaction_history {
+  margin: 15px;
+  border-collapse: collapse;
+}
+.table_header {
+  background-color: orchid;
+}
+.table_data,
+.table_header {
+  padding: 5px;
+  border: 1px solid orange;
+}
