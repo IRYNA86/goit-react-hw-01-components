@@ -14,9 +14,7 @@ ul {
   display: block;
   box-sizing: content-box;
 }
-.friends_card {
-  display: flex;
-}
+
 .item {
   display: flex;
   width: 150px;

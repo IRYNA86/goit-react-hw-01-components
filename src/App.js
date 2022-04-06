@@ -1,43 +1,34 @@
-import ProfileList from './components/profile/profileList';
-import user from './user.json';
+import Profile from 'components/profile/profile';
+import user from 'components/outputData/user.json';
 
-import data from './data.json';
-import StatisticsList from './components/statistics/statisticsList';
-import StatisticsTitle from 'components/statistics/statisticsTitle';
-import css from 'components/statistics/statistics.module.css'
+import stats from 'components/outputData/data.json';
+import Statistics from './components/statistics/statistics';
 
-import friends from './friends.json';
+import friends from 'components/outputData/friends.json';
 import FriendsList from 'components/friends/friendsList';
 import cssFriends from 'components/friends/friends.module.css'
 
-import transactions from './transactions.json';
+import transactions from 'components/outputData/transactions.json';
 import TransactionHistoryList from './components/transaction/transactionHistoryList';
-import cssTrans from 'components/transaction/transaction.module.css'
 
 export default function App() {
     return <section>
         <div>
-            <ProfileList user={user}/>
+            <Profile
+                username={user.username}
+                tag={user.tag}
+                location={user.location}
+                avatar={user.avatar}
+                stats={user.stats} />
         </div>
-        
-        <section className={css.statistics}>
-            <StatisticsTitle text='Upload stats' />
-            <StatisticsList data={data} />
-        </section>
-        
+                   
+            <Statistics title="Upload stats" stats={stats}/> 
+                    
         <div className={cssFriends.friends_box}>
             <FriendsList friends={friends} />
         </div>
-        
-        <table className={cssTrans.transaction_history}>
-            <thead className={cssTrans.table}>
-                <tr>
-                    <th className={cssTrans.table_header}>Type </th>
-                    <th className={cssTrans.table_header}>Amount </th>
-                    <th className={cssTrans.table_header}>Currency</th>
-                </tr>
-            </thead>
+                
             <TransactionHistoryList transactions={transactions} />
-        </table>
+        
     </section>
 }
